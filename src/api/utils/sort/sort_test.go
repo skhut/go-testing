@@ -2,31 +2,50 @@ package sort
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestBubblesortOrderDesc(t *testing.T) {
+func TestBubblesortOrderAsc(t *testing.T) {
 	//Init
-	elements := []int{9, 8, 5, 3, 7, 4, 2, 0, 1}
+	elements := []int{9, 5, 7, 2, 8, 4, 6, 0, 1, 3}
 
 	//Execution
 	Bubblesort(elements)
 
 	//Validation
-	if elements[0] != 9 {
-		t.Error("First element should be 9")
-	}
+	assert.EqualValues(t, 0, elements[0], "First element should be 0")
+	assert.EqualValues(t, 9, elements[len(elements)-1], "Last element should be 9")
+}
 
-	if elements[len(elements)-1] != 0 {
-		t.Error("Last element should be 0")
+func TestSort(t *testing.T) {
+	//Init
+	elements := []int{9, 5, 7, 2, 8, 4, 6, 0, 1, 3}
+
+	//Execution
+	Sort(elements)
+
+	//Validation
+	assert.EqualValues(t, 0, elements[0], "First element should be 0")
+	assert.EqualValues(t, 9, elements[len(elements)-1], "Last element should be 9")
+}
+
+func BenchmarkBubblesort(b *testing.B) {
+	//Init
+	//elements := []int{9, 5, 7, 2, 8, 4, 6, 0, 3}
+	elements := GetElements(25490)
+	//Execution
+	for i := 0; i < b.N; i++ {
+		Bubblesort(elements)
 	}
 }
 
-func TestBubblesortAlreadySorted(t *testing.T) {
+func BenchmarkSort(b *testing.B) {
 	//Init
-	elements := []int{9, 8, 7, 6, 5, 4}
-
+	//elements := []int{9, 5, 7, 2, 8, 4, 6, 0, 3}
+	elements := GetElements(25500)
 	//Execution
-	Bubblesort(elements)
-
-	//Validation
+	for i := 0; i < b.N; i++ {
+		Sort(elements)
+	}
 }

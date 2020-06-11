@@ -1,0 +1,10 @@
+
+1. Restclient library used in the examples -- claims to be simple and light weight
+-------------------------------------------------------------------------------
+https://github.com/mercadolibre/golang-restclient
+
+
+2. The following API service is used as an external API to show the examples using restclient using the above library
+----------------------------------------------------------------------------------------------------------------------
+https://api.mercadolibre.com/countries/AR
+
