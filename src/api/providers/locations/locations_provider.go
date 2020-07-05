@@ -5,21 +5,21 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/mercadolibre/golang-restclient/rest"
+	"github.com/federicoleon/golang-restclient/rest"
 	"github.com/skhut/go-testing/src/api/domain/locations"
 	"github.com/skhut/go-testing/src/api/utils/errors"
 )
 
 const (
-	urlGetCountry = "https://api.mercadolibre.com/countries/AR"
+	urlGetCountry = "https://api.mercadolibre.com/countries/%s"
 )
 
 //GetCountry to get the countries from Api
 func GetCountry(countryID string) (*locations.Country, *errors.ApiError) {
-	//fmt.Println(fmt.Sprintf(urlGetCountry, countryID))
-	//response := rest.Get(fmt.Sprintf(urlGetCountry, countryID))
-	resp := rest.Get(urlGetCountry)
-	fmt.Println(rest.Head(urlGetCountry).String())
+	fmt.Println(fmt.Sprintf(urlGetCountry, countryID))
+	resp := rest.Get(fmt.Sprintf(urlGetCountry, countryID))
+	fmt.Printf("Obtained status code:%d", resp.StatusCode)
+	//fmt.Println(rest.Head(urlGetCountry).String())
 	if resp == nil || resp.Response == nil {
 		return nil, &errors.ApiError{
 			Status:  http.StatusInternalServerError,

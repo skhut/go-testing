@@ -8,3 +8,17 @@ https://github.com/mercadolibre/golang-restclient
 ----------------------------------------------------------------------------------------------------------------------
 https://api.mercadolibre.com/countries/AR
 
+3. Online JSON APIs that are available for testing
+------------------------------------------------------
+https://jsonplaceholder.typicode.com/todos/1
+
+4. JSON Minify - useful tool to get the JSON in one line for a lengthy JSON structure
+--------------------------------------------------------------------------------------
+https://www.cleancss.com/json-minify/
+
+5. The Ultimate Guide of micro services design and development by the same author
+
+6. Authors own website to post questions in the blog - Has some cool coding articles and tips
+--------------------------------------------------------------------------------------------
+https://federicoleon.com/
+

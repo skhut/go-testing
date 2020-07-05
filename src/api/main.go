@@ -1,13 +1,9 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/skhut/go-testing/src/api/providers/locations"
+	"github.com/skhut/go-testing/src/api/app"
 )
 
 func main() {
-	country, err := locations.GetCountry("ARB")
-	fmt.Println(err)
-	fmt.Println(country)
+	app.StartApp()
 }
